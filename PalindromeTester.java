@@ -44,4 +44,22 @@ public class PalindromeTester
       }
       while (another.equalsIgnoreCase("y")); // allows y or Y
    }
+
+   public static boolean isPalindrome(String str){
+      //terminating case
+      if(str.length() <= 1){
+         return true;
+      }
+      //solve a small part
+      String firstChar = str.substring(0,1);
+      String lastChar = str.substring(str.length()-1);
+      if(firstChar.equals(lastChar)){
+         return isPalindrome(str.substring(1,str.length()-1));
+      }
+      else{
+         return false;
+      }
+
+
+   }
 }
